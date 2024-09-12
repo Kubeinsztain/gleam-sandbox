@@ -1,5 +1,5 @@
 pub fn square_of_sum(n: Int) -> Int {
-  let sum = {n * {n + 1}} / 2
+  let sum = { n * { n + 1 } } / 2
   sum * sum
 }
 

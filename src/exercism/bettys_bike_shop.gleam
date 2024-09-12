@@ -1,5 +1,5 @@
-import gleam/int
 import gleam/float
+import gleam/int
 import gleam/string
 
 pub fn pence_to_pounds(pence: Int) -> Float {
