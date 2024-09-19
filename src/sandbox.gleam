@@ -1,6 +1,6 @@
-import exercism/high_school_sweetheart
+import exercism/pythagorean_triplet
 import gleam/io
 
 pub fn main() {
-  high_school_sweetheart.pair("Alice Apple", "Bob Banana") |> io.println
+  pythagorean_triplet.triplets_with_sum(1000) |> io.debug
 }
