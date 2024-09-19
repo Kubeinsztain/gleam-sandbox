@@ -1,6 +1,6 @@
-import exercism/reverse_string
+import exercism/high_school_sweetheart
 import gleam/io
 
 pub fn main() {
-  "dashboard" |> reverse_string.reverse |> io.println
+  high_school_sweetheart.pair("Alice Apple", "Bob Banana") |> io.println
 }
