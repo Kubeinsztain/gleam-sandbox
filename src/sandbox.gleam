@@ -1,6 +1,7 @@
-import exercism/pythagorean_triplet
+import exercism/kindergarten_garden
 import gleam/io
 
 pub fn main() {
-  pythagorean_triplet.triplets_with_sum(1000) |> io.debug
+  kindergarten_garden.plants("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV", kindergarten_garden.Kincaid)
+  |> io.debug
 }
