@@ -1,7 +1,11 @@
-import exercism/kindergarten_garden
+import exercism/word_count
 import gleam/io
 
 pub fn main() {
-  kindergarten_garden.plants("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV", kindergarten_garden.Kincaid)
+  let test_string = "one,\ntwo,\nthree"
+
+  // let other_string = " multiple   whitespaces"
+
+  word_count.count_words(test_string)
   |> io.debug
 }
