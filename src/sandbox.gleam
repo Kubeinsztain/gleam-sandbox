@@ -1,11 +1,20 @@
-import exercism/word_count
+import exercism/tournament
 import gleam/io
 
 pub fn main() {
-  let test_string = "one,\ntwo,\nthree"
+//   let test_string =
+//     "Allegoric Alaskans;Blithering Badgers;win
+// Allegoric Alaskans;Blithering Badgers;win
+// Courageous Californians;Allegoric Alaskans;loss"
 
-  // let other_string = " multiple   whitespaces"
+let typical = "Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Blithering Badgers;Devastating Donkeys;win"
 
-  word_count.count_words(test_string)
+  // let other_string = ""
+
+  tournament.tally(typical)
   |> io.debug
 }
