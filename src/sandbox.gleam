@@ -1,7 +1,7 @@
-import exercism/rna_transcription
+import exercism/series
 import gleam/io
 
 pub fn main() {
-  let dna = "ACGTCGATCGTAG"
-  rna_transcription.to_rna(dna) |> io.debug
+  let input = "918493904243"
+  series.slices(input, 5) |> io.debug
 }
