@@ -1,7 +1,24 @@
-import exercism/series
+import exercism/expert_experiments
 import gleam/io
 
 pub fn main() {
-  let input = "918493904243"
-  series.slices(input, 5) |> io.debug
+  use setup_data, action_data <- expert_experiments.run_experiment(
+    "Test 1",
+    setup,
+    action,
+  )
+
+  setup_data |> io.debug
+  action_data |> io.debug
+
+  Ok("Success")
+}
+
+fn setup() -> Result(Int, String) {
+  // Ok(3)
+  Error("Failed to setup")
+}
+
+fn action(data: Int) -> Result(Int, String) {
+  Ok(data + 5)
 }
