@@ -1,24 +1,28 @@
-import exercism/expert_experiments
+import exercism/newsletter
 import gleam/io
+import simplifile
 
 pub fn main() {
-  use setup_data, action_data <- expert_experiments.run_experiment(
-    "Test 1",
-    setup,
-    action,
-  )
+  let send_email = fn(email) {
+    case email {
+      "bushra@example.com" -> {
+        let assert Ok(log) = simplifile.read("log.txt")
+        log |> io.debug
+        Ok(Nil)
+      }
+      "abdi@example.com" -> {
+        let assert Ok(log) = simplifile.read("log.txt")
+        log |> io.debug
+        Error(Nil)
+      }
+      "bell@example.com" -> {
+        let assert Ok(log) = simplifile.read("log.txt")
+        log |> io.debug
+        Ok(Nil)
+      }
+      _ -> panic as "Unexpected email given to send_email function"
+    }
+  }
 
-  setup_data |> io.debug
-  action_data |> io.debug
-
-  Ok("Success")
-}
-
-fn setup() -> Result(Int, String) {
-  // Ok(3)
-  Error("Failed to setup")
-}
-
-fn action(data: Int) -> Result(Int, String) {
-  Ok(data + 5)
+  newsletter.send_newsletter("emails.txt", "log.txt", send_email)
 }
