@@ -1,8 +1,9 @@
-import exercism/dna_encoding
+import exercism/hamming
 import gleam/io
 
 pub fn main() {
-  let test_value = <<0b00110001>>
+  let strand1 = "GGACGGATTCTG"
+  let strand2 = "AGGACGGATTCT"
 
-  test_value |> dna_encoding.decode |> io.debug
+  hamming.distance(strand1, strand2) |> io.debug
 }
