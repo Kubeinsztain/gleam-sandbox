@@ -1,9 +1,6 @@
-import exercism/hamming
+import exercism/darts
 import gleam/io
 
 pub fn main() {
-  let strand1 = "GGACGGATTCTG"
-  let strand2 = "AGGACGGATTCT"
-
-  hamming.distance(strand1, strand2) |> io.debug
+  darts.score(0.0, 0.0) |> io.debug
 }
