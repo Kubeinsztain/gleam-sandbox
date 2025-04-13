@@ -1,6 +1,9 @@
-import exercism/darts
+import exercism/satellite
 import gleam/io
 
 pub fn main() {
-  darts.score(0.0, 0.0) |> io.debug
+  satellite.tree_from_traversals(inorder: ["i", "a", "f", "x", "r"], preorder: [
+    "a", "i", "x", "f", "r",
+  ])
+  |> io.debug
 }
