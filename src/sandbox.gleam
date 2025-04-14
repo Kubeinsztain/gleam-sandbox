@@ -1,9 +1,8 @@
-import exercism/satellite
+import exercism/clock
 import gleam/io
 
 pub fn main() {
-  satellite.tree_from_traversals(inorder: ["i", "a", "f", "x", "r"], preorder: [
-    "a", "i", "x", "f", "r",
-  ])
+  clock.create(hour: 1, minute: -160)
+  |> clock.display()
   |> io.debug
 }
