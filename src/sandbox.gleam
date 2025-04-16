@@ -1,8 +1,7 @@
-import exercism/clock
+import exercism/grains
 import gleam/io
 
 pub fn main() {
-  clock.create(hour: 1, minute: -160)
-  |> clock.display()
+  grains.square(32)
   |> io.debug
 }
