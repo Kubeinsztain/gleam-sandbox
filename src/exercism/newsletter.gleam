@@ -8,15 +8,15 @@ pub fn read_emails(path: String) -> Result(List(String), Nil) {
   |> simplifile.read
   |> result.map(string.trim)
   |> result.map(string.split(_, "\n"))
-  |> result.nil_error
+  |> result.replace_error(Nil)
 }
 
 pub fn create_log_file(path: String) -> Result(Nil, Nil) {
-  simplifile.create_file(path) |> result.nil_error
+  simplifile.create_file(path) |> result.replace_error(Nil)
 }
 
 pub fn log_sent_email(path: String, email: String) -> Result(Nil, Nil) {
-  simplifile.append(path, email <> "\n") |> result.nil_error
+  simplifile.append(path, email <> "\n") |> result.replace_error(Nil)
 }
 
 pub fn send_newsletter(

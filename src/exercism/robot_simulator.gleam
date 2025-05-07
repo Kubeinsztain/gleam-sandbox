@@ -27,7 +27,7 @@ pub fn move(
   case instructions {
     "" -> Robot(direction, position)
     ins -> {
-      let remaining = string.drop_left(ins, 1)
+      let remaining = string.drop_start(ins, 1)
       case string.first(ins) {
         Ok("A") -> {
           let new_position = advance(direction, position)

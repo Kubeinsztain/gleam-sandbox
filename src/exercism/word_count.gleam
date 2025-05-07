@@ -1,7 +1,7 @@
 import gleam/dict.{type Dict}
 import gleam/list
 import gleam/option.{None, Some}
-import gleam/regex.{Options}
+import gleam/regexp.{Options}
 import gleam/string
 
 pub fn count_words(input: String) -> Dict(String, Int) {
@@ -27,30 +27,30 @@ fn string_filters(value: String) {
 
 fn replace_non_alphanumeric(value: String) {
   let options = Options(case_insensitive: False, multi_line: True)
-  let assert Ok(re) = regex.compile("[^a-zA-Z0-9' ]", options)
+  let assert Ok(re) = regexp.compile("[^a-zA-Z0-9' ]", options)
 
-  regex.replace(re, value, " ")
+  regexp.replace(re, value, " ")
 }
 
 fn trim_quotes(value: String) {
   let options = Options(case_insensitive: False, multi_line: True)
   // trim quotes from the start and end of the string
   let assert Ok(re) =
-    regex.compile("(?<![a-zA-Z0-9])['\"]|['\"](?![a-zA-Z0-9])", options)
+    regexp.compile("(?<![a-zA-Z0-9])['\"]|['\"](?![a-zA-Z0-9])", options)
 
-  regex.replace(re, value, " ")
+  regexp.replace(re, value, " ")
 }
 
 fn trim_spaces(value: String) {
   let options = Options(case_insensitive: False, multi_line: True)
-  let assert Ok(re) = regex.compile("[ ]+", options)
+  let assert Ok(re) = regexp.compile("[ ]+", options)
 
-  regex.replace(re, value, " ")
+  regexp.replace(re, value, " ")
 }
 
 fn trim_edge_spaces(value: String) {
   let options = Options(case_insensitive: False, multi_line: True)
-  let assert Ok(re) = regex.compile("(^ +| +$)", options)
+  let assert Ok(re) = regexp.compile("(^ +| +$)", options)
 
-  regex.replace(re, value, "")
+  regexp.replace(re, value, "")
 }

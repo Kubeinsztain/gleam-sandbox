@@ -24,7 +24,7 @@ pub fn build_diamond(letters: String) -> String {
 
   let last_index = length - 1
 
-  { letters <> { string.drop_right(letters, 1) |> string.reverse } }
+  { letters <> { string.drop_end(letters, 1) |> string.reverse } }
   |> string.to_graphemes
   |> list.index_map(fn(x, i) {
     case i {

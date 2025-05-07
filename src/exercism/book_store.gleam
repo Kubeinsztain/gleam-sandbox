@@ -31,7 +31,7 @@ fn unique_books_count(books: List(Int)) -> List(Int) {
     // If the book count is not in the array
     // We will set the count of unique book to 1 and fill the rest indexes with 0s
     // And at the end we will append the already counted books
-    n -> list.concat([[1], list.repeat(0, n - 1), counts])
+    n -> list.flatten([[1], list.repeat(0, n - 1), counts])
   }
 }
 

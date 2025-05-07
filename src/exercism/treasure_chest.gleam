@@ -1,6 +1,6 @@
 // Please define the TreasureChest generic custom type
 pub type TreasureChest(treasure) {
-  TreasureChest(password: String, treasure)
+  TreasureChest(password: String, treasure: treasure)
 }
 
 // Please define the UnlockResult generic custom type

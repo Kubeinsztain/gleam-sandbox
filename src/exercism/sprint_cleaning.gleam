@@ -6,7 +6,7 @@ pub fn extract_error(problem: Result(a, b)) -> b {
 }
 
 pub fn remove_team_prefix(team: String) -> String {
-  string.drop_left(team, 5)
+  string.drop_start(team, 5)
 }
 
 pub fn split_region_and_team(combined: String) -> #(String, String) {

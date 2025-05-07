@@ -27,7 +27,7 @@ pub fn plants(diagram: String, student: Student) -> List(Plant) {
   let student_index = student_index(student)
   string.split(diagram, "\n")
   |> list.map(fn(row) { get_plants(row, student_index) })
-  |> list.concat
+  |> list.flatten
 }
 
 fn student_index(student: Student) {

@@ -31,7 +31,7 @@ fn accumulate(input: String, size: Int) -> List(String) {
   case string.length(input) >= size {
     True -> {
       let slice = string.slice(input, 0, size)
-      list.append([slice], accumulate(string.drop_left(input, 1), size))
+      list.append([slice], accumulate(string.drop_start(input, 1), size))
     }
     False -> []
   }

@@ -1,10 +1,7 @@
 import gleam/float
-import gleam/io
 
 pub fn score(x: Float, y: Float) -> Int {
   let distance = distance(x, y)
-
-  distance |> io.debug
 
   case distance {
     x if x >. 10.0 -> 0

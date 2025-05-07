@@ -12,7 +12,7 @@ pub fn message(log_line: String) -> String {
 pub fn log_level(log_line: String) -> String {
   case string.split(log_line, ":") {
     [first, ..] -> {
-      string.drop_left(first, 1) |> string.drop_right(1) |> string.lowercase()
+      string.drop_start(first, 1) |> string.drop_end(1) |> string.lowercase()
     }
 
     _ -> ""

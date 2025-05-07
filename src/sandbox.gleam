@@ -1,7 +1,5 @@
-import exercism/grains
-import gleam/io
+import examples/results/results_simple
 
 pub fn main() {
-  grains.square(32)
-  |> io.debug
+  results_simple.is_error_example()
 }
