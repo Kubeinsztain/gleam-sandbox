@@ -4,31 +4,32 @@ import gleam/result
 pub fn all_example() {
   // Array of valid results
   io.println("Array of valid results")
-  [Ok(2), Ok(3)]
-  |> io.debug
-  |> result.all
-  |> io.debug
+  let _ =
+    [Ok(2), Ok(3)]
+    |> echo
+    |> result.all
+    |> echo
   io.println("----------------------------------------")
   // Array of valid and error results
   io.println("Array of valid and error results")
   [Ok(2), Error("first error"), Ok(3), Error("second error")]
-  |> io.debug
+  |> echo
   |> result.all
-  |> io.debug
+  |> echo
 }
 
 pub fn flatten_example() {
-  Ok(Ok(1)) |> io.debug |> result.flatten |> io.debug
+  let _ = Ok(Ok(1)) |> echo |> result.flatten |> echo
   io.println("----------------------------------------")
-  Ok(Ok(Ok(1))) |> io.debug |> result.flatten |> io.debug
+  let _ = Ok(Ok(Ok(1))) |> echo |> result.flatten |> echo
   io.println("----------------------------------------")
-  Ok(Error("")) |> io.debug |> result.flatten |> io.debug
+  let _ = Ok(Error("")) |> echo |> result.flatten |> echo
   io.println("----------------------------------------")
-  Error(Nil) |> io.debug |> result.flatten |> io.debug
+  Error(Nil) |> echo |> result.flatten |> echo
 }
 
 pub fn is_error_example() {
-  Ok(1) |> io.debug |> result.is_error |> io.debug
+  Ok(1) |> echo |> result.is_error |> echo
   io.println("----------------------------------------")
-  Error(Nil) |> io.debug |> result.is_error |> io.debug
+  Error(Nil) |> echo |> result.is_error |> echo
 }
