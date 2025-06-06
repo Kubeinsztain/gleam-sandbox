@@ -50,7 +50,6 @@ fn run_actor(
   worker: Subject(Msg),
   times: Int,
 ) -> Subject(Msg) {
-
   echo worker
 
   case times {

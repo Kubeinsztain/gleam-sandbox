@@ -52,7 +52,7 @@ fn handle_message(
   }
 }
 
-pub fn example() {
+pub fn run() {
   let assert Ok(my_actor) = actor.start([], handle_message)
 
   actor.call(my_actor, Get, 1000) |> echo
