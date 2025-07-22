@@ -1,10 +1,7 @@
-import exercism/secure_treasure_chest
-import gleam/result
+import exercism/allergies
 
 pub fn main() {
-  let password = "123-456-789"
-  use chest <- result.try(secure_treasure_chest.create(password, 49))
-
-  echo secure_treasure_chest.open(chest, password)
-  echo secure_treasure_chest.open(chest, "wrong password")
+  let score = 64
+  let allergen = allergies.Cats
+  allergies.allergic_to(allergen, score) |> echo
 }
