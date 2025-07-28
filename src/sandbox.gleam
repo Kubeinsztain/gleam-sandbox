@@ -1,7 +1,7 @@
-import exercism/allergies
+import leetcode/convert_to_title.{convert_to_title}
 
 pub fn main() {
-  let score = 64
-  let allergen = allergies.Cats
-  allergies.allergic_to(allergen, score) |> echo
+  let input = 372_574_573_478
+
+  echo convert_to_title(input)
 }
