@@ -1,7 +1,5 @@
-import leetcode/convert_to_title.{convert_to_title}
+import examples/concurrency/static_supervisors
 
 pub fn main() {
-  let input = 372_574_573_478
-
-  echo convert_to_title(input)
+  echo static_supervisors.start()
 }
