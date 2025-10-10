@@ -6,6 +6,7 @@
 ```sh
 gleam add sandbox@1
 ```
+
 ```gleam
 import sandbox
 
