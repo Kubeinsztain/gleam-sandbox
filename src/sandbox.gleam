@@ -1,5 +1,5 @@
-import examples/concurrency/static_supervisors
+import exercism/secret_handshake
 
 pub fn main() {
-  echo static_supervisors.start()
+  echo secret_handshake.commands(31)
 }
