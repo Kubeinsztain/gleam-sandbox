@@ -176,8 +176,7 @@ fn team_record(entry: Team) -> String {
 
   let padding = {
     30 - string.length(team)
-    |> list.range(0, _)
-    |> list.fold("", fn(acc, _) { string.append(acc, " ") })
+    |> int.range(0, _, " ", fn(acc, _) { string.append(acc, " ") })
   }
 
   string.concat([
