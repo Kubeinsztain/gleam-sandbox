@@ -1,5 +1,4 @@
 import gleam/int
-import gleam/list
 
 pub type Error {
   InvalidSquare
@@ -13,7 +12,7 @@ pub fn square(square: Int) -> Result(Int, Error) {
 }
 
 pub fn total() -> Int {
-  list.range(1, 64) |> list.map(fn(x) { power(2, x - 1, 1) }) |> int.sum
+  int.range(1, 65, 0, fn(acc, item) { acc + power(2, item - 1, 1) })
 }
 
 fn power(base: Int, exponent: Int, acc: Int) {
