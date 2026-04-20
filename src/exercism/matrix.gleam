@@ -25,13 +25,5 @@ fn to_list_of_rows(string: String) -> Result(List(List(Int)), Nil) {
 }
 
 fn to_list_of_cols(rows: List(List(Int))) -> Result(List(List(Int)), Nil) {
-  use first_row <- result.try(list.first(rows))
-  let col_count = list.length(first_row)
-
-  list.range(0, col_count - 1)
-  |> list.map(fn(index) {
-    list.map(rows, fn(row) { list.drop(row, index) |> list.first() })
-    |> result.all
-  })
-  |> result.all
+  Ok(list.transpose(rows))
 }
