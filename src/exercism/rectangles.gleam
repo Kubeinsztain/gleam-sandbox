@@ -1,4 +1,5 @@
 import gleam/dict.{type Dict}
+import gleam/int
 import gleam/list
 import gleam/option.{None, Some}
 import gleam/string
@@ -93,8 +94,9 @@ fn validate_horizontal_edges(
 
 fn validate_horizontal_edge(cords: List(Cord), row: Int, start: Int, end: Int) {
   end - start == 1
-  || list.range(start + 1, end - 1)
-  |> list.all(fn(col) { list.contains(cords, #(row, col)) })
+  || int.range(start + 1, end, True, fn(acc, col) {
+    list.contains(cords, #(row, col)) && acc
+  })
 }
 
 fn validate_vertical_edges(
@@ -121,8 +123,9 @@ fn validate_vertical_edge(
   end: Int,
 ) -> Bool {
   end - start == 1
-  || list.range(start + 1, end - 1)
-  |> list.all(fn(row) { list.contains(cords, #(row, col)) })
+  || int.range(start + 1, end, True, fn(acc, row) {
+    list.contains(cords, #(row, col)) && acc
+  })
 }
 
 fn safe_dict_list_extract(
