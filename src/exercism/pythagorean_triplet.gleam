@@ -1,3 +1,4 @@
+import gleam/int
 import gleam/list
 
 pub type Triplet {
@@ -5,21 +6,14 @@ pub type Triplet {
 }
 
 pub fn triplets_with_sum(sum: Int) -> List(Triplet) {
-  list.range(1, sum / 3)
-  |> list.flat_map(fn(x) {
-    list.range(x + 1, sum / 2)
-    |> list.map(fn(y) {
+  int.range(1, sum / 3 + 1, [], fn(acc, x) {
+    int.range(x, sum / 2 + 1, [], fn(acc, y) {
       let z = sum - x - y
       case x * x + y * y == z * z {
-        True -> Triplet(x, y, z)
-        _ -> Triplet(0, 0, 0)
+        True -> [Triplet(x, y, z), ..acc]
+        _ -> acc
       }
     })
-  })
-  |> list.filter(fn(x) {
-    case x {
-      Triplet(0, 0, 0) -> False
-      _ -> True
-    }
+    |> list.append(acc, _)
   })
 }
