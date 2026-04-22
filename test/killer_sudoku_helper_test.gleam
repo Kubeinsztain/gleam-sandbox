@@ -1,10 +1,5 @@
 import exercism/killer_sudoku_helper
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn trivial_1_digit_cages_1_test() {
   killer_sudoku_helper.combinations(size: 1, sum: 1, exclude: [])

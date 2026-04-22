@@ -1,10 +1,5 @@
 import exercism/sum_of_multiples
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn no_multiples_within_limit_test() {
   sum_of_multiples.sum(factors: [3, 5], limit: 1)

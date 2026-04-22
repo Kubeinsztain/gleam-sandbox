@@ -1,9 +1,4 @@
 import exercism/circular_buffer
-import gleeunit
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn reading_an_empty_buffer_should_fail_test() {
   let buffer = circular_buffer.new(1)

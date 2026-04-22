@@ -1,10 +1,5 @@
 import exercism/pythagorean_triplet.{Triplet}
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn triplets_whose_sum_is_12_test() {
   pythagorean_triplet.triplets_with_sum(12)

@@ -1,10 +1,5 @@
 import exercism/matrix
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn extract_row_from_one_number_matrix_test() {
   matrix.row(1, "1")

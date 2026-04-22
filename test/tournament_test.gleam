@@ -1,10 +1,5 @@
 import exercism/tournament
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn just_the_header_if_no_input_test() {
   tournament.tally("")

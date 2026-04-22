@@ -1,10 +1,5 @@
 import exercism/rectangles
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn no_rows_test() {
   rectangles.rectangles("")

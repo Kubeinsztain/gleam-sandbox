@@ -1,10 +1,5 @@
 import exercism/grains.{InvalidSquare}
-import gleeunit
 import gleeunit/should
-
-pub fn main() {
-  gleeunit.main()
-}
 
 pub fn returns_the_number_of_grains_on_the_square_grains_on_square_1_test() {
   grains.square(1)
